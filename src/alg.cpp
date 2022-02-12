@@ -1,11 +1,11 @@
 // Copyright 2021 NNTU-CS
 
 int gcd(int a, int b) {
-    int ost;
-    while (a % b != 0) {
-        ost = a % b;
-        a = b;
-        b = ost;
+    while (a != 0 && b != 0) {
+        if (a > b)
+            a = a % b;
+        else
+            b = b % a;
     }
-    return b;
+    return a + b;
 }
